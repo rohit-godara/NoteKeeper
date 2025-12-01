@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../utils/AuthContext'
-import { notesAPI } from '../utils/api'
+import { notesAPI, userAPI } from '../utils/api'
 import NoteCard from '../components/NoteCard'
 import NoteModal from '../components/NoteModal'
 import { DocumentTextIcon, ChartBarIcon, ClockIcon, UserIcon, PlusIcon } from '@heroicons/react/24/outline'
 
 export default function Dashboard() {
-  const { user, logout } = useAuth()
+  const { user, logout, token } = useAuth()
+  const [profile, setProfile] = useState(null)
   const [notes, setNotes] = useState([])
   const [loading, setLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -45,6 +46,20 @@ export default function Dashboard() {
   useEffect(() => {
     fetchNotes()
   }, [filters, pagination.page])
+
+  useEffect(() => {
+    if (token) {
+      const fetchProfile = async () => {
+        try {
+          const response = await userAPI.getProfile()
+          setProfile(response.data)
+        } catch (error) {
+          console.error('Error fetching profile:', error)
+        }
+      }
+      fetchProfile()
+    }
+  }, [token])
 
   const handleCreateNote = async (noteData) => {
     try {
@@ -94,7 +109,7 @@ export default function Dashboard() {
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 relative">
         <div className="px-4 py-6 sm:px-0">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back, {user?.name}!</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back, {profile?.name || user?.name}!</h1>
             <p className="text-lg text-gray-600">Manage your notes and boost your productivity</p>
           </div>
           {/* Stats Cards */}

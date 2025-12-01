@@ -82,11 +82,17 @@ const Navbar = () => {
                 </Link>
                 <div className="flex items-center space-x-3 pl-3 border-l border-gray-200">
                   <div className="flex items-center space-x-3">
-                    <img 
-                      src={profile?.profilePhoto || user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"} 
-                      alt="Profile" 
-                      className="w-8 h-8 rounded-full object-cover border-2 border-blue-200"
-                    />
+                    {profile?.profilePhoto || user?.profilePhoto ? (
+                      <img 
+                        src={profile?.profilePhoto || user?.profilePhoto} 
+                        alt="Profile" 
+                        className="w-8 h-8 rounded-full object-cover border-2 border-blue-200"
+                      />
+                    ) : (
+                      <div className="w-8 h-8 rounded-full bg-gray-200 border-2 border-blue-200 flex items-center justify-center">
+                        <UserIcon className="h-5 w-5 text-gray-500" />
+                      </div>
+                    )}
                     <div className="text-sm">
                       <div className="font-semibold text-gray-900">{profile?.name || user?.name}</div>
                       <div className="text-xs text-gray-500">{profile?._count?.notes || 0} notes</div>

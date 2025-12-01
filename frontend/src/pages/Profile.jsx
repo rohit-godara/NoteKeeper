@@ -105,11 +105,17 @@ export default function Profile() {
             <div className="px-8 py-10">
               <div className="flex items-center mb-8">
                 <div className="relative mr-6">
-                  <img 
-                    src={profile?.profilePhoto || user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"} 
-                    alt="Profile" 
-                    className="w-20 h-20 rounded-full object-cover border-4 border-blue-200"
-                  />
+                  {profile?.profilePhoto || user?.profilePhoto ? (
+                    <img 
+                      src={profile?.profilePhoto || user?.profilePhoto} 
+                      alt="Profile" 
+                      className="w-20 h-20 rounded-full object-cover border-4 border-blue-200"
+                    />
+                  ) : (
+                    <div className="w-20 h-20 rounded-full bg-gray-200 border-4 border-blue-200 flex items-center justify-center">
+                      <UserIcon className="h-12 w-12 text-gray-500" />
+                    </div>
+                  )}
                   <label className="absolute -bottom-1 -right-1 bg-blue-600 hover:bg-blue-700 p-2 rounded-full cursor-pointer transition-colors">
                     <CameraIcon className="h-4 w-4 text-white" />
                     <input 
@@ -225,11 +231,17 @@ export default function Profile() {
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
                     <div className="relative inline-block">
-                      <img 
-                        src={profile?.profilePhoto || user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"} 
-                        alt="Profile" 
-                        className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-blue-200"
-                      />
+                      {profile?.profilePhoto || user?.profilePhoto ? (
+                        <img 
+                          src={profile?.profilePhoto || user?.profilePhoto} 
+                          alt="Profile" 
+                          className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-blue-200"
+                        />
+                      ) : (
+                        <div className="w-24 h-24 rounded-full bg-gray-200 border-4 border-blue-200 flex items-center justify-center mx-auto mb-4">
+                          <UserIcon className="h-14 w-14 text-gray-500" />
+                        </div>
+                      )}
                       <label className="absolute bottom-3 right-0 bg-blue-600 hover:bg-blue-700 p-2 rounded-full cursor-pointer transition-colors">
                         <CameraIcon className="h-3 w-3 text-white" />
                         <input 
