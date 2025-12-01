@@ -61,6 +61,16 @@ const Navbar = () => {
                   Profile
                 </Link>
                 <Link 
+                  to="/chat-bot" 
+                  className={`px-3 py-2 rounded-lg font-medium transition-all ${
+                    isActive('/chat-bot') 
+                      ? 'bg-blue-100 text-blue-700 shadow-sm' 
+                      : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'
+                  }`}
+                >
+                  ChatBot
+                </Link>
+                <Link 
                   to="/about" 
                   className={`px-3 py-2 rounded-lg font-medium transition-all ${
                     isActive('/about') 
