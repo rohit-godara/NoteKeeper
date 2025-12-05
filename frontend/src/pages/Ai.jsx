@@ -10,7 +10,7 @@ function Ai() {
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
 
-  const API_KEY = "AIzaSyDiJ-76YlRMXLsAl4ypGqAfddJVkbhkuC8"
+  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY
 
   useEffect(() => {
     scrollToBottom()
@@ -32,7 +32,7 @@ function Ai() {
     setIsLoading(true)
     
     try {
-      const res = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`, {
+      const res = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, {
         "contents": [{
           "parts": [{ "text": userMessage }]
         }]
