@@ -10,7 +10,7 @@ function Ai() {
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
 
-  const API_KEY = import.meta.env.VITE_GEMINI_API_KEY
+  const API_KEY = import.meta.env.API_KEY
 
   useEffect(() => {
     scrollToBottom()
