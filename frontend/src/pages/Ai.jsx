@@ -60,7 +60,7 @@ function Ai() {
           <span className="inline-block mr-2">
             <Bot className="inline-block mb-1 animate-pulse" size={28} />
           </span>
-          Chat with Outlaw
+          Chat with Siri
         </h1>
         
         <div className="overflow-y-auto max-h-[calc(100vh-240px)] pr-2 custom-scrollbar">
@@ -69,7 +69,7 @@ function Ai() {
               <div className="bg-blue-50 inline-block p-4 rounded-full mb-4 shadow-md">
                 <Bot size={32} className="text-blue-600" />
               </div>
-              <h2 className="text-lg font-medium text-gray-700 mb-2">Welcome to Outlaw</h2>
+              <h2 className="text-lg font-medium text-gray-700 mb-2">Welcome to Siri</h2>
               <p className="text-gray-500 max-w-md mx-auto">Start a conversation by typing a message below.</p>
             </div>
           )}
@@ -101,7 +101,7 @@ function Ai() {
                   )}
                 </div>
                 <span className="ml-2 font-medium text-sm text-gray-700">
-                  {message.isUser ? "You" : "Outlaw"}
+                  {message.isUser ? "You" : "Siri"}
                 </span>
               </div>
               
