@@ -83,37 +83,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Tech Stack */}
-        <div className="bg-white shadow-2xl rounded-xl border mb-12 p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Built With Modern Technology</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Frontend</h3>
-              <div className="space-y-2">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">React.js</div>
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">TailwindCSS</div>
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">React Router</div>
-              </div>
-            </div>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Backend</h3>
-              <div className="space-y-2">
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Node.js</div>
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Express.js</div>
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">JWT Auth</div>
-              </div>
-            </div>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Database</h3>
-              <div className="space-y-2">
-                <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">MongoDB</div>
-                <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Prisma ORM</div>
-                <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Atlas Cloud</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-2xl p-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
