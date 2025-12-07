@@ -20,7 +20,7 @@ export default function Dashboard() {
   })
   const [pagination, setPagination] = useState({
     page: 1,
-    limit: 12,
+    limit: 4,
     total: 0,
     pages: 0
   })
